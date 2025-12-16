@@ -1,15 +1,16 @@
-import { useState } from "react";
-import Display from "./Display";
+import StudentList from "./components/StudentList";
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const students = [
+    { id: 1, name: "Nguyen Van A", age: 18 },
+    { id: 2, name: "Tran Thi B", age: 19 },
+    { id: 3, name: "Le Van C", age: 20 },
+  ];
 
   return (
     <div>
-      <button onClick={() => setCount(count + 1)}>Tăng</button>
-      <button onClick={() => setCount(count - 1)}>Giảm</button>
-
-      <Display count={count} />
+      <h2>Danh sách sinh viên</h2>
+      <StudentList students={students} />
     </div>
   );
 };
